@@ -6,7 +6,7 @@ import com.picpay.desafio.android.data.repository.UsersRepositoryImpl
 import com.picpay.desafio.android.domain.repository.UsersRepository
 import com.picpay.desafio.android.domain.usecase.UserUseCaseImpl
 import com.picpay.desafio.android.presentation.usecase.UserUseCase
-import com.picpay.desafio.android.presentation.viewModel.UsersViewModel
+import com.picpay.desafio.android.presentation.viewModel.UserListViewModel
 import com.picpay.desafio.android.utils.RetrofitService
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -35,7 +35,7 @@ internal class UsersModule : FeatureModule() {
 
     override val presentationModule = module {
         viewModel {
-            UsersViewModel(
+            UserListViewModel(
                 useCase = get()
             )
         }

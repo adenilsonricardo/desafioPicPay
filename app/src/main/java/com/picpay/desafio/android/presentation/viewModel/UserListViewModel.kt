@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 
-class UsersViewModel(private val useCase: UserUseCase) : ViewModel() {
+class UserListViewModel(private val useCase: UserUseCase) : ViewModel() {
 
     private val _users: MutableLiveData<List<User>> = MutableLiveData()
     var users: LiveData<List<User>> = _users

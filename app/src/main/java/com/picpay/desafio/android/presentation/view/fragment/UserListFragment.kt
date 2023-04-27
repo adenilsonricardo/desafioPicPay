@@ -12,12 +12,12 @@ import com.picpay.desafio.android.R
 import com.picpay.desafio.android.data.models.User
 import com.picpay.desafio.android.databinding.FragmentListUserBinding
 import com.picpay.desafio.android.presentation.view.adapter.UserListAdapter
-import com.picpay.desafio.android.presentation.viewModel.UsersViewModel
+import com.picpay.desafio.android.presentation.viewModel.UserListViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class UserListFragment : Fragment() {
     private lateinit var binding: FragmentListUserBinding
-    private val viewModel: UsersViewModel by viewModel()
+    private val viewModel: UserListViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
