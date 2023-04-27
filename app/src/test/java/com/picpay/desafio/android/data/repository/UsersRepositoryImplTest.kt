@@ -11,10 +11,7 @@ import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.test.TestCoroutineDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.runBlockingTest
-import kotlinx.coroutines.test.setMain
+import kotlinx.coroutines.test.*
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
@@ -32,7 +29,8 @@ class UsersRepositoryImplTest {
     @MockK
     private var usersRepository = UsersRepositoryImpl(usersDataSource)
 
-    private val testDispatcher = TestCoroutineDispatcher()
+    @OptIn(ExperimentalCoroutinesApi::class)
+    private val testDispatcher = StandardTestDispatcher()
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Before
@@ -53,7 +51,7 @@ class UsersRepositoryImplTest {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun `repository should call the dataSource and get a successful response`() = runBlockingTest {
+    fun `GIVEN repository call the datasource WHEN datasource receives a response to the request THEN the answer is a success`() {
         //GIVEN
         val expectedResult = UsersHelper.userResponse
         //WHEN
@@ -68,7 +66,7 @@ class UsersRepositoryImplTest {
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun `repository should call the dataSource and get a exception`() = runBlockingTest {
+    fun `GIVEN repository call the datasource WHEN datasource receives a response to the request THEN the answer is a exception`() {
         //GIVEN
         val expected = Exception("Generic exception!!")
         //WHEN
