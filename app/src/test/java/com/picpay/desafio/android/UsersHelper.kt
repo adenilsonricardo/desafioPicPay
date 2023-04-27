@@ -12,4 +12,13 @@ object UsersHelper {
             img = ""
         )
     )
+
+    val userResponseError = listOf(
+        User(
+            id = "",
+            name = "",
+            username = "",
+            img = ""
+        )
+    )
 }

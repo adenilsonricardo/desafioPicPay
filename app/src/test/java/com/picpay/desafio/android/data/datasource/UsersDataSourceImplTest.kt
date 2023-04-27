@@ -9,10 +9,7 @@ import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.test.TestCoroutineDispatcher
-import kotlinx.coroutines.test.resetMain
-import kotlinx.coroutines.test.runBlockingTest
-import kotlinx.coroutines.test.setMain
+import kotlinx.coroutines.test.*
 import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
@@ -27,7 +24,8 @@ class UsersDataSourceImplTest {
     private var usersDataSource: UsersDataSource =
         UsersDataSourceImpl(picPayService)
 
-    private val testDispatcher = TestCoroutineDispatcher()
+    @OptIn(ExperimentalCoroutinesApi::class)
+    private val testDispatcher = StandardTestDispatcher()
 
 
     @OptIn(ExperimentalCoroutinesApi::class)
@@ -47,9 +45,8 @@ class UsersDataSourceImplTest {
         Dispatchers.resetMain()
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun `dataSource should call the dataSource and get a successful response`() = runBlockingTest {
+    fun `GIVEN service calls datasource WHEN datasource gets a response THEN return is a success`() {
         //GIVEN
         val expectedResult = UsersHelper.userResponse
         //WHEN
@@ -62,9 +59,8 @@ class UsersDataSourceImplTest {
         }
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun `usersDataSource should call the dataSource and get a exception`() = runBlockingTest {
+    fun `GIVEN service calls datasource WHEN datasource gets a response THEN return is a exception`() {
         //GIVEN
         val expected = Exception("Generic exception!!")
         //WHEN
