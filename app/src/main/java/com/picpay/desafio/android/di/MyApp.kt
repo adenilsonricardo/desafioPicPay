@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.di.di
+package com.picpay.desafio.android.di
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext

@@ -1,4 +1,4 @@
-package com.example.desafioooo.di
+package com.picpay.desafio.android.di
 
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module

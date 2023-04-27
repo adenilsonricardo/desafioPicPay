@@ -1,11 +1,11 @@
-package com.picpay.desafio.android.di.di
+package com.picpay.desafio.android.di
 
-import com.example.desafioooo.di.FeatureModule
-import com.picpay.desafio.android.datasource.UsersDataSource
-import com.picpay.desafio.android.datasource.UsersDataSourceImpl
+import com.picpay.desafio.android.data.datasource.UsersDataSource
+import com.picpay.desafio.android.data.datasource.UsersDataSourceImpl
+import com.picpay.desafio.android.data.repository.UsersRepositoryImpl
 import com.picpay.desafio.android.domain.repository.UsersRepository
-import com.picpay.desafio.android.domain.repository.UsersRepositoryImpl
-import com.picpay.desafio.android.domain.usecase.UserUseCase
+import com.picpay.desafio.android.domain.usecase.UserUseCaseImpl
+import com.picpay.desafio.android.presentation.usecase.UserUseCase
 import com.picpay.desafio.android.presentation.viewModel.UsersViewModel
 import com.picpay.desafio.android.utils.RetrofitService
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -24,13 +24,13 @@ internal class UsersModule : FeatureModule() {
 
         factory<UsersRepository> {
             UsersRepositoryImpl(
-                dataSource = get()
+                dataSource = get(),
             )
         }
     }
 
     override val domainModule = module {
-        factory { UserUseCase(repository = get()) }
+        factory<UserUseCase> { UserUseCaseImpl(repository = get()) }
     }
 
     override val presentationModule = module {
