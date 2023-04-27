@@ -1,3 +1,64 @@
+# Característica da Resolução do Desafio Android:
+
+* Kotlin
+* Utilizado arquitetura Clean combinado com Mvvm
+* Navigation Component
+* Componentes do Android Jetpack
+* Testes Unitários
+* Injeção de Dependencia com Koin
+* Coroutines
+
+## 1ª Etapa - Configuração do Gradle:
+* Implementar ferramentas adicionais;
+* Atualizado versões de ferramentas do projeto;
+* Atualizado versões do gradle(7.5) e gradle puglin(7.4.2)
+
+## 2ª Etapa - Camada Data 
+* Pasta api com a interface com o método e o endpoint necessários;
+* Pasta model com a data class com itens que serão necessário no projeto;
+* Pasta datasource com a implementação indicando a busca de informações em um webservice, e uma interface para ser utilizado no projeto em outros locais;
+* Pasta repository com a implementação controlando para onde enviar a requisição. 
+#### Screenshot:
+![image](https://user-images.githubusercontent.com/85114978/234867828-0fa28fda-45f6-4c8d-8dc1-33bcfb2bbc69.png)
+
+## 3ª Etapa - Camada Domain
+* Pasta repository com a interface da implementação para utilizar nesta camada;
+* Pasta usecase com a classe que contém a regra de negócio.
+#### Screenshot:
+![image](https://user-images.githubusercontent.com/85114978/234868876-a90278f4-9fba-4032-bfea-695d28ae5134.png)
+
+## 4ª Etapa - Camada Presentation
+* Pasta View composta por subpastas activity, adapter e fragment
+* Pasta viewModel com a classe que interage com as alterações sinalizadas na view
+* Criado o layout fragment e o navigation para o fragment ser exibido sobre a activity
+#### Screenshot:
+![image](https://user-images.githubusercontent.com/85114978/234872968-2c6bacd4-9d61-4d5b-8256-26f2e0792851.png)
+![image](https://user-images.githubusercontent.com/85114978/234874503-c1d529af-0991-4ddd-9d23-c9fb7ca40c60.png)
+
+## 5ª Etapa - Camada Utils
+* Classe com a configuração do retrofit para fazer a requisição e conversão dos dados requisitados.
+#### Screenshot:
+![image](https://user-images.githubusercontent.com/85114978/234875991-cee8dde1-1209-4de0-9f23-93f5d72b95c7.png)
+
+## 6ª Etada - Injeção de Dependencia
+* Configurado as classes para utilizar injeção de depencia no projeto através do Koin.
+* Classe MyApp para iniciar o Koin, UsersModule para definir quais são as classes a serem fabricadas, e FeatureModule para carregar as dependencias necessárias.
+#### Screenshot:
+![image](https://user-images.githubusercontent.com/85114978/234874181-8d290780-e48f-48c9-bc30-7cf1b6bc0c25.png)
+
+## 7º Etapa - Testes Unitários
+* Implementado teste para o datasource em caso de sucesso ou falha;
+* Implementado teste para repository em caso de sucesso ou falha;
+* Implementado teste para usecase em caso de sucesso ou falha;
+* Implementado teste para viewmodel em caso de sucesso ou falha;
+* Utilizado um object para simular uma resposta.
+
+![image](https://user-images.githubusercontent.com/85114978/234878179-99ed3bd4-8a27-4863-a099-fca279e7b173.png)
+
+## 8ª Etapa - Projeto executando
+
+### __________________________________________________________________________________________________________________________________________________________________
+
 # PicPay - Desafio Android
 
 <img src="https://github.com/mobilepicpay/desafio-android/blob/master/desafio-picpay.gif" width="300"/>
