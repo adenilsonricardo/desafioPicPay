@@ -1,8 +1,9 @@
 package com.picpay.desafio.android.common.di
 
 import android.app.Application
-import com.picpay.desafio.android.users.di.UsersModule
+import com.picpay.desafio.android.users.di.UsersModule.usersModule
 import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
 import org.koin.dsl.KoinAppDeclaration
 
@@ -16,7 +17,7 @@ class MyApp : Application() {
     object KoinAppDeclarationProvider {
         fun get(application: Application): KoinAppDeclaration = {
             androidContext(application)
-            UsersModule().load()
+            loadKoinModules(usersModule)
         }
     }
 }

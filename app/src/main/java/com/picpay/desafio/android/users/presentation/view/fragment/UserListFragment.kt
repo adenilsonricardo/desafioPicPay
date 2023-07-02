@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.picpay.desafio.android.databinding.FragmentListUserBinding
 import com.picpay.desafio.android.users.domain.models.UsersDomain
 import com.picpay.desafio.android.users.presentation.state.UserState
+import com.picpay.desafio.android.users.presentation.state.UserState.Inactive.isLoading
 import com.picpay.desafio.android.users.presentation.view.adapter.UserListAdapter
 import com.picpay.desafio.android.users.presentation.viewModel.UserListViewModel
 import kotlinx.coroutines.launch
@@ -35,7 +36,7 @@ class UserListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.userListProgressBar.visibility = View.VISIBLE
+//        binding.userListProgressBar.visibility = View.VISIBLE
 
         getObserver()
         viewModel.fetchUsers()
@@ -60,7 +61,6 @@ class UserListFragment : Fragment() {
                 }
             }
         }
-
     }
 
     private fun getState(isLoading: Boolean) {
@@ -83,38 +83,20 @@ class UserListFragment : Fragment() {
     }
 
     private fun handleLoadingState() {
-        getState(isLoading = true)
+        getState(isLoading)
     }
 
     private fun handleResponseDataState(users: List<UsersDomain>?) {
-        getState(isLoading = false)
+        getState(!isLoading)
         renderList(users)
     }
 
     private fun handleErrorState(error: String?) {
-        getState(isLoading = false)
+        getState(!isLoading)
         Toast.makeText(requireContext(), error, Toast.LENGTH_LONG).show()
     }
 
     private fun handleInactiveState() {
         Log.d("Inactive", "Initial state of StateFlow")
     }
-
-
-//    private fun setView(users: List<User>) {
-//        binding.userListProgressBar.visibility = View.GONE
-//        val adapter = UserListAdapter(users)
-//        binding.recyclerView.adapter = adapter
-//        binding.recyclerView.layoutManager = LinearLayoutManager(context)
-//    }
-//
-////    private fun setError() {
-////        val message = getString(R.string.error)
-////
-////        binding.userListProgressBar.visibility = View.GONE
-////        binding.recyclerView.visibility = View.GONE
-////
-////        Toast.makeText(context, message, Toast.LENGTH_SHORT)
-////            .show()
-////    }
 }
