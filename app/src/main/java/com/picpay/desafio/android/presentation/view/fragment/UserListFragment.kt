@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.picpay.desafio.android.data.models.User
 import com.picpay.desafio.android.databinding.FragmentListUserBinding
+import com.picpay.desafio.android.domain.models.UsersDomain
 import com.picpay.desafio.android.presentation.state.UserState
 import com.picpay.desafio.android.presentation.view.adapter.UserListAdapter
 import com.picpay.desafio.android.presentation.viewModel.UserListViewModel
@@ -70,7 +70,7 @@ class UserListFragment : Fragment() {
         }
     }
 
-    private fun renderList(users: List<User>?) {
+    private fun renderList(users: List<UsersDomain>?) {
         binding.recyclerView.layoutManager =
             LinearLayoutManager(
                 context,
@@ -86,7 +86,7 @@ class UserListFragment : Fragment() {
         getState(isLoading = true)
     }
 
-    private fun handleResponseDataState(users: List<User>?) {
+    private fun handleResponseDataState(users: List<UsersDomain>?) {
         getState(isLoading = false)
         renderList(users)
     }

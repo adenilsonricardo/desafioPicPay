@@ -1,7 +1,7 @@
 package com.picpay.desafio.android.domain.repository
 
-import com.picpay.desafio.android.data.models.User
+import com.picpay.desafio.android.domain.models.UsersDomain
 
 interface UsersRepository {
-    suspend fun getUsers(): List<User>
+    suspend fun getUsers(): List<UsersDomain>
 }

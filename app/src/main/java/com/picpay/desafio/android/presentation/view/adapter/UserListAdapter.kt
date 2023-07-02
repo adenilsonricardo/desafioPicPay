@@ -3,11 +3,11 @@ package com.picpay.desafio.android.presentation.view.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.picpay.desafio.android.data.models.User
 import com.picpay.desafio.android.databinding.ListItemUserBinding
+import com.picpay.desafio.android.domain.models.UsersDomain
 
 class UserListAdapter(
-    var listUsers: List<User> = emptyList()
+    private var listUsers: List<UsersDomain>
 ) : RecyclerView.Adapter<UserListItemViewHolder>() {
 
     override fun onCreateViewHolder(
