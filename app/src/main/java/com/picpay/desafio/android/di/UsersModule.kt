@@ -14,19 +14,9 @@ import org.koin.dsl.module
 internal class UsersModule : FeatureModule() {
 
     override val dataModule = module {
-        factory { RetrofitService.service }
-
-        factory<UsersDataSource> {
-            UsersDataSourceImpl(
-                service = get()
-            )
-        }
-
-        factory<UsersRepository> {
-            UsersRepositoryImpl(
-                dataSource = get(),
-            )
-        }
+        single { RetrofitService.service }
+        factory<UsersDataSource> { UsersDataSourceImpl(service = get()) }
+        factory<UsersRepository> { UsersRepositoryImpl(dataSource = get()) }
     }
 
     override val domainModule = module {
@@ -34,10 +24,6 @@ internal class UsersModule : FeatureModule() {
     }
 
     override val presentationModule = module {
-        viewModel {
-            UserListViewModel(
-                useCase = get()
-            )
-        }
+        viewModel { UserListViewModel(useCase = get()) }
     }
 }

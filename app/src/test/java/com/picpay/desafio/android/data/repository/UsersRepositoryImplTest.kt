@@ -49,7 +49,6 @@ class UsersRepositoryImplTest {
         Dispatchers.resetMain()
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun `GIVEN repository call the datasource WHEN datasource receives a response to the request THEN the answer is a success`() {
         //GIVEN
@@ -64,7 +63,6 @@ class UsersRepositoryImplTest {
         }
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
     fun `GIVEN repository call the datasource WHEN datasource receives a response to the request THEN the answer is a exception`() {
         //GIVEN
