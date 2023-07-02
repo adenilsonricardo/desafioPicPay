@@ -1,9 +1,10 @@
 package com.picpay.desafio.android.data.repository
 
 import com.picpay.desafio.android.UsersHelper
-import com.picpay.desafio.android.data.api.PicPayService
-import com.picpay.desafio.android.data.datasource.UsersDataSource
-import com.picpay.desafio.android.data.datasource.UsersDataSourceImpl
+import com.picpay.desafio.android.users.data.api.PicPayService
+import com.picpay.desafio.android.users.data.datasource.UsersDataSource
+import com.picpay.desafio.android.users.data.datasource.UsersDataSourceImpl
+import com.picpay.desafio.android.users.data.repository.UsersRepositoryImpl
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK

@@ -1,9 +1,9 @@
 package com.picpay.desafio.android.domain.usecase
 
 import com.picpay.desafio.android.UsersHelper
-import com.picpay.desafio.android.data.datasource.UsersDataSource
-import com.picpay.desafio.android.data.repository.UsersRepositoryImpl
-import com.picpay.desafio.android.presentation.usecase.UserUseCase
+import com.picpay.desafio.android.users.data.datasource.UsersDataSource
+import com.picpay.desafio.android.users.data.repository.UsersRepositoryImpl
+import com.picpay.desafio.android.users.presentation.usecase.UserUseCase
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk

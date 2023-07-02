@@ -1,6 +1,6 @@
 package com.picpay.desafio.android
 
-import com.picpay.desafio.android.data.models.User
+import com.picpay.desafio.android.users.data.models.User
 
 object UsersHelper {
 

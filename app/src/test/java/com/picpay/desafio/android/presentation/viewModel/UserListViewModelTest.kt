@@ -2,8 +2,9 @@ package com.picpay.desafio.android.presentation.viewModel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.picpay.desafio.android.UsersHelper
-import com.picpay.desafio.android.data.models.User
-import com.picpay.desafio.android.presentation.usecase.UserUseCase
+import com.picpay.desafio.android.users.data.models.User
+import com.picpay.desafio.android.users.presentation.usecase.UserUseCase
+import com.picpay.desafio.android.users.presentation.viewModel.UserListViewModel
 import io.mockk.MockKAnnotations.init
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
