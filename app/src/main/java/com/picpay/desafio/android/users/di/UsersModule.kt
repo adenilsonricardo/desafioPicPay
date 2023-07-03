@@ -1,11 +1,11 @@
 package com.picpay.desafio.android.users.di
 
+import com.picpay.desafio.android.common.mapper.UsersListMapperImpl
+import com.picpay.desafio.android.common.network.RetrofitService
 import com.picpay.desafio.android.users.data.api.PicPayService
 import com.picpay.desafio.android.users.data.datasource.UsersDataSource
 import com.picpay.desafio.android.users.data.datasource.UsersDataSourceImpl
 import com.picpay.desafio.android.users.data.mapper.UsersListMapper
-import com.picpay.desafio.android.users.data.mapper.UsersListMapperImpl
-import com.picpay.desafio.android.users.data.network.RetrofitService
 import com.picpay.desafio.android.users.data.repository.UsersRepositoryImpl
 import com.picpay.desafio.android.users.domain.repository.UsersRepository
 import com.picpay.desafio.android.users.domain.usecase.UserUseCaseImpl

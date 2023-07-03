@@ -1,6 +1,6 @@
-package com.picpay.desafio.android.users.data.mapper
+package com.picpay.desafio.android.common.mapper
 
-import com.picpay.desafio.android.common.mapper.Mapper
+import com.picpay.desafio.android.users.data.mapper.UsersListMapper
 import com.picpay.desafio.android.users.data.models.User
 import com.picpay.desafio.android.users.domain.models.UsersDomain
 

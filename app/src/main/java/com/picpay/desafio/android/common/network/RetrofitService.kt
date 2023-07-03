@@ -1,10 +1,9 @@
-package com.picpay.desafio.android.users.data.network
+package com.picpay.desafio.android.common.network
 
 import com.google.gson.GsonBuilder
+import com.picpay.desafio.android.common.utils.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
-const val BASE_URL = "https://609a908e0f5a13001721b74e.mockapi.io/picpay/api/"
 
 object RetrofitService {
 
